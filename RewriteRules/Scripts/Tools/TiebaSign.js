@@ -31,4 +31,13 @@ function getCookies() {
   $.done();
 }
 
-getCookies();
+try {
+  $prefs.removeValueForkey('CookieWA');
+  if(!$prefs.valueForKey('CookieWA')) {
+      $notify("","", "清除Cookie成功");
+  }else {
+      $notify("","", "清除Cookie失败");
+  }
+} catch (e) {
+  console.log(e);
+}
