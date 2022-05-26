@@ -4,10 +4,8 @@ const url = "http://c.tieba.baidu.com/c/c/forum/sign";
 const method = "POST";
 const headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'User-Agent': 'bdtb for Android 7.2.0.0',
         'Host': 'c.tieba.baidu.com',
         "Accept-Language": "zh-cn",
-        "Cookie": "BIDUPSID=F88D844C332EA0C4266DDF492B1AC67C; PSTM=1638111507; BAIDUID=F88D844C332EA0C4BF3A07BC65096DBC:FG=1; bdshare_firstime=1638701552958; __yjs_duid=1_2d73c14441760df05d7055b3723b71c61638702409530; Hm_lvt_7d6994d7e4201dd18472dd1ef27e6217=1638887493; BDUSS_BFESS=RSUn43VHdSS2F-MGZ3QmNSbkZRNFZlTFNPWkV5VGNEWkhkckpmSVdtRWF1OTFoSVFBQUFBJCQAAAAAAAAAAAEAAACyQ0odaHVzMTk5MwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoutmEaLrZheW; BDORZ=FAE1F8CFA4E8841CC28A015FEAEE495D; STOKEN=fbffc0c0269826a0e4751ba3cccc36279e3ad2ce5befb43baea5fcb97588d898; USER_JUMP=-1; Hm_lvt_98b9d8c2fd6608d564bf2ac2ae642948=1639055816,1639056132,1639329442,1639329457; H_PS_PSSID=35105_31253_35239_34967_34584_34504_35245_34579_34872_35323_26350_35210; Hm_lpvt_98b9d8c2fd6608d564bf2ac2ae642948=1639330222; BAIDU_WISE_UID=wapp_1639330222505_791; mo_originid=2"
 }
 var data = {'BDUSS':'o4Nno4V1N0NVZSZzBtRnphaWoyR09ERmYyWVRUeXd5QjlCTU1QflhFbWN5dDFoSUFBQUFBJCQAAAAAAAAAAAEAAACyQ0odaHVzMTk5MwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJw9tmGcPbZhaF', 'kw': '李毅吧', 'tbs': '19ef3f4659ef56291639333786', 'timestamp': Date.now().toString()};
 var i = ''
@@ -17,11 +15,14 @@ for(var key in data){
 i+='tiebaclient!!!'
 var v1 = hex_md5(unescape(encodeURIComponent(i)));
 data['sign']=v1.toUpperCase();
+url+="?"
+for(var key in data){
+    url+=key+'='+data[key]+'&'
+}
 const myRequest = {
     url: url,
     method: method, // Optional, default GET.
     headers: headers,
-    body: JSON.stringify(data)
 };
 
 $task.fetch(myRequest).then(response => {
