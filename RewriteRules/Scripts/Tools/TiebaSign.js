@@ -1,1 +1,1 @@
-$notify(1, 2, 3)
+console.log("发现了贴吧");
