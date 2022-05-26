@@ -12,12 +12,13 @@ const headers = {
         'User-Agent': 'bdtb for Android 7.2.0.0',
         'Host': 'c.tieba.baidu.com',
 }
-var data = {'BDUSS':'o4Nno4V1N0NVZSZzBtRnphaWoyR09ERmYyWVRUeXd5QjlCTU1QflhFbWN5dDFoSUFBQUFBJCQAAAAAAAAAAAEAAACyQ0odaHVzMTk5MwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJw9tmGcPbZhaF', 'kw': '李毅吧', 'tbs': '19ef3f4659ef56291639333786', 'timestamp': Date.parse(new Date())};
+var data = {'BDUSS':'o4Nno4V1N0NVZSZzBtRnphaWoyR09ERmYyWVRUeXd5QjlCTU1QflhFbWN5dDFoSUFBQUFBJCQAAAAAAAAAAAEAAACyQ0odaHVzMTk5MwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJw9tmGcPbZhaF', 'kw': '李毅吧', 'tbs': '19ef3f4659ef56291639333786', 'timestamp': Date.now().toString()};
 var i = ''
 for(var key in data){
     i+=key+'='+ data[key]
 }
-var v1 = hex_md5(i+"tiebaclient!!!").toUpperCase();
+i+='tiebaclient!!!'
+var v1 = hex_md5(encodeURI(i)).toUpperCase();
 data['sign']=v1;
 const myRequest = {
     url: url,
