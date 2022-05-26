@@ -20,11 +20,12 @@ for(var key in data){
 i+='tiebaclient!!!'
 var v1 = hex_md5(unescape(encodeURIComponent(i)));
 data['sign']=v1.toUpperCase();
+$notify("参数", "请求数据", data);
 const myRequest = {
     url: url,
     method: method, // Optional, default GET.
-    body: JSON.stringify(data),
-    headers: headers
+    headers: headers,
+    body: JSON.stringify(data)
 };
 
 $task.fetch(myRequest).then(response => {
