@@ -19,7 +19,6 @@ data['sign']=v1;
 const myRequest = {
     url: url,
     method: method, // Optional, default GET.
-    headers: headers, // Optional.
     body: JSON.stringify(data)
 };
 
