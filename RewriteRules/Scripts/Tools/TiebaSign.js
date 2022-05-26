@@ -1,4 +1,4 @@
-const header = $request.headers.['Cookie'];
+const header = $request.headers['Cookie'];
 console.log(header);
 $done(header)
 
