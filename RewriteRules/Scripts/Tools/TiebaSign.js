@@ -14,11 +14,12 @@ const headers = {
 }
 var data = {'BDUSS':'o4Nno4V1N0NVZSZzBtRnphaWoyR09ERmYyWVRUeXd5QjlCTU1QflhFbWN5dDFoSUFBQUFBJCQAAAAAAAAAAAEAAACyQ0odaHVzMTk5MwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJw9tmGcPbZhaF', 'kw': '李毅吧', 'tbs': '19ef3f4659ef56291639333786', 'timestamp': Date.now().toString()};
 var i = ''
+data['kw']=encodeURI(data['kw']).replace(/%/g, "\\x").toLowerCase();
 for(var key in data){
     i+=key+'='+ data[key]
 }
 i+='tiebaclient!!!'
-var v1 = hex_md5("b'BDUSS=o4Nno4V1N0NVZSZzBtRnphaWoyR09ERmYyWVRUeXd5QjlCTU1QflhFbWN5dDFoSUFBQUFBJCQAAAAAAAAAAAEAAACyQ0odaHVzMTk5MwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJw9tmGcPbZhaFkw=\xe6\x9d\x8e\xe6\xaf\x85tbs=19ef3f4659ef56291639333786timestamp=1653543144601tiebaclient!!!'").toUpperCase();
+var v1 = hex_md5('b'+"'"+i+"'");
 data['sign']=v1;
 const myRequest = {
     url: url,
