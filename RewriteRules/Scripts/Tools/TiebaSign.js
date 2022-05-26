@@ -60,7 +60,8 @@ function getLikeForum() {
         });
 
     } else {
-        $notify("","","尚未获取Cookie，请获取后重试。");
+        $notify("","","尚未获取Cookie，正在尝试获取");
+        getCookies();
     }
     $done();
 }
