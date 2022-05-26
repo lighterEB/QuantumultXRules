@@ -1,4 +1,4 @@
-const header = $reques.headers;
+const header = $request.headers;
 const obj = JSON.parse(header);
 console.log(JSON.stringify(obj));
 
