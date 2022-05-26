@@ -7,7 +7,7 @@ function getCookies() {
       if ($request.headers && $request.url.match(/c\.tieba\.baidu\.com/)) {
         var CookieName = "百度贴吧";
         var CookieKey = "CookieTB";
-        var tbs = $request.body[''] 
+        var tbs = $request.body;
         var CookieValue = $request.headers['Cookie'];
         if ($prefs.valueForKey(CookieKey)) {
           if ($prefs.valueForKey(CookieKey) != CookieValue) {
