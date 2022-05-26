@@ -1,4 +1,4 @@
 var headers=$request.headers
-console.log(headers);
+console.log(JSON.parse(headers));
 
 $done();
