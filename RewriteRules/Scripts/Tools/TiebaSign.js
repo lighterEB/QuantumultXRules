@@ -31,7 +31,7 @@ const myRequest = {
 $task.fetch(myRequest).then(response => {
     // response.statusCode, response.headers, response.body
     var resp = JSON.parse(response.body);
-    $notify("Title", "Subtitle", resp); // Success!
+    $notify("Title", "Subtitle", JSON.stringify(resp)); // Success!
     $done();
 }, reason => {
     // reason.error
