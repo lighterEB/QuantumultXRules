@@ -24,6 +24,7 @@ const myRequest = {
     url: url,
     method: method, // Optional, default GET.
     body: JSON.stringify(data),
+    headers: headers
 };
 
 $task.fetch(myRequest).then(response => {
