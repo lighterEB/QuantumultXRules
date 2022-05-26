@@ -20,7 +20,7 @@ for(var key in data){
 i+='tiebaclient!!!'
 var v1 = hex_md5(unescape(encodeURIComponent(i)));
 data['sign']=v1.toUpperCase();
-$notify("参数", "请求数据", data);
+console.log(data);
 const myRequest = {
     url: url,
     method: method, // Optional, default GET.
