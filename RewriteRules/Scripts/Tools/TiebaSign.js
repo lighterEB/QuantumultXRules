@@ -24,8 +24,8 @@ const myRequest = {
 
 $task.fetch(myRequest).then(response => {
     // response.statusCode, response.headers, response.body
-    console.log(response.body);
-    $notify("Title", "Subtitle", eval(JSON.stingify(response.body)); // Success!
+    var resp = JSON.parse(response.body);
+    $notify("Title", "Subtitle", resp.error_msg); // Success!
     $done();
 }, reason => {
     // reason.error
