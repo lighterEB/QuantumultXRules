@@ -4,7 +4,7 @@ function getCookies() {
         var CookieName = "百度贴吧";
         var CookieKey = "CookieTB";
         var CookieValue = $request.headers['Cookie'];
-        var BDUSS = CookieValue.match('BDUSS=(.*?);').toString().split('=')[1];
+        var BDUSS = CookieValue.match('BDUSS=(.*?);').toString().split('=')[1].split(';')[0];
         var tbs = JSON.parse($response.body)['anti']['tbs']; 
         if ($prefs.valueForKey(CookieKey)) {
           if ($prefs.valueForKey(CookieKey) != CookieValue || $prefs.valueForKey('BDUSS') != BDUSS || $prefs.valueForKey('tbs') != tbs) {
