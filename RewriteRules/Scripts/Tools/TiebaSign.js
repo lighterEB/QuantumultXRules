@@ -1,3 +1,3 @@
 var body=$response.body;
-$notify("","",JSON.stringify(body));
+$notify("","",JSON.stringify(JSON.parse(body)));
 $done();
