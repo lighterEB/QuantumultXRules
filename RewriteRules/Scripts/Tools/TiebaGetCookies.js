@@ -5,10 +5,12 @@ function getCookies() {
         var CookieKey = "CookieTB";
         var CookieValue = $request.headers['Cookie'];
         var BDUSS = CookieValue.match('BDUSS=(.*?);').toString().split('=')[1];
+        var tbs = JSON.parse($response.body)['anti']['tbs']; 
         if ($prefs.valueForKey(CookieKey)) {
-          if ($prefs.valueForKey(CookieKey) != CookieValue) {
+          if ($prefs.valueForKey(CookieKey) != CookieValue || $prefs.valueForKey('BDUSS') != BDUSS || $prefs.valueForKey('tbs') != tbs) {
             var cookie = $prefs.setValueForKey(CookieValue, CookieKey);
             $prefs.setValueForKey(BDUSS, 'BDUSS');
+            $prefs.setValueForKey(tbs, 'tbs');
             if (!cookie) {
               $notify("", "", "更新" + CookieName + "Cookie失败 ‼️");
             } else {
@@ -18,6 +20,7 @@ function getCookies() {
         } else {
           var cookie = $prefs.setValueForKey(CookieValue, CookieKey);
           $prefs.setValueForKey(BDUSS, 'BDUSS');
+          $prefs.setValueForKey(tbs, 'tbs');
           if (!cookie) {
             $notify("", "", "首次写入" + CookieName + "Cookie失败 ‼️");
           } else {
@@ -31,21 +34,8 @@ function getCookies() {
       $notify("写入Cookie失败", "", "未知错误 ‼️")
       console.log(JSON.stringify(eor) + "\n" + eor + "\n" + JSON.stringify($request.headers))
     }
+    console.log($prefs.valueForKey('tbs'));
+    console.log($prefs.valueForKey('BDUSS'));
     $done();
   }
-function getTbs() {
-  var tbs = $prefs.valueForKey('tbs');
-  var body = JSON.parse($response.body)['anti']['tbs']; 
-  try {
-      if ($response.body && tbs != body ) {
-          $prefs.setValueForKey(body, 'tbs');
-          $notify("","","更新tbs成功！");
-      }
-    } catch(e) {
-        $notify("","",e);
-    }
-    $done()
-}
-
 getCookies();
-getTbs();
