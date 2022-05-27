@@ -34,8 +34,6 @@ function getCookies() {
       $notify("写入Cookie失败", "", "未知错误 ‼️")
       console.log(JSON.stringify(eor) + "\n" + eor + "\n" + JSON.stringify($request.headers))
     }
-    console.log($prefs.valueForKey('tbs'));
-    console.log($prefs.valueForKey('BDUSS'));
     $done();
   }
 getCookies();
