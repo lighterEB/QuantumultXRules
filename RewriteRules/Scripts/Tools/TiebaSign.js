@@ -107,7 +107,7 @@ function signBars(bars, tbs, index, BDUSS) {
                 errorCode: 9999,
                 errorMsg: "已签到"
             });
-            signBars(bars, tbs, ++index);
+            signBars(bars, tbs, ++index, BDUSS);
         } else {
             sign_url.url = signHash(BDUSS, bar.forum_name, tbs, sign_url.url);
             $tosix7.get(sign_url, function (error, response, data) {
@@ -117,7 +117,7 @@ function signBars(bars, tbs, index, BDUSS) {
                         errorCode: 999,
                         errorMsg: '接口错误'
                     });
-                    signBars(bars, tbs, ++index);
+                    signBars(bars, tbs, ++index, BDUSS);
                 } else {
                     try {
                         var signResult = JSON.parse(data);
@@ -125,7 +125,7 @@ function signBars(bars, tbs, index, BDUSS) {
                             process.result.push({
                                 bar: bar.forum_name,
                                 errorCode: 0,
-                                errorMsg: `获得${signResult.data.user_info.sign_bonus_point}积分,第${signResult.data.uinfo.user_sign_rank}个签到`
+                                errorMsg: `经验🆙＋${signResult.data.user_info.sign_bonus_point},签到排名🥇：${signResult.data.user_info.user_sign_rank}`
                             });
                         } else {
                             process.result.push({
@@ -157,14 +157,14 @@ function checkIsAllProcessed() {
                 notifySuccessCount++;
             }
             if (res.errorCode == 9999) {
-                notify += `【${res.bar}】已经签到，当前等级${res.level},经验${res.exp}
+                notify += `【${res.bar}】已签到✅，等级📶${res.level},经验✨${res.exp}
 `;
             } else {
-                notify += `【${res.bar}】${res.errorCode == 0 ? '签到成功' : '签到失败'}，${res.errorCode == 0 ? res.errorMsg : ('原因：' + res.errorMsg)}
+                notify += `【${res.bar}】${res.errorCode == 0 ? '签到成功✌🏼' : '签到失败😖'}，${res.errorCode == 0 ? res.errorMsg : ('原因：' + res.errorMsg)}
 `;
             }
         }
-        $tosix7.notify("贴吧签到", `签到${spliceArr.length}个,成功${notifySuccessCount}个`, notify);
+        $tosix7.notify("贴吧签到", `签到${spliceArr.length}个,成功✌${notifySuccessCount}个`, notify);
         $tosix7.done()
     }
 }
