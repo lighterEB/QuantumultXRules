@@ -34,6 +34,18 @@ function getCookies() {
     $.done();
   }
 function getTbs() {
+  var tbs = $prefs.valueForKey('tbs');
+  var body = JSON.parse($response.body)['anti']['tbs']; 
   try {
-  }
+      if ($response.body && tbs != body ) {
+          $prefs.setValueForKey(body, 'tbs');
+          console.log('更新tbs成功！');
+      }
+    } catch(e) {
+        console.log(e);
+    }
+    $done()
 }
+
+getCookies();
+getTbs();
