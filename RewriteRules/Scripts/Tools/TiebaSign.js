@@ -1,3 +1,3 @@
-var body=$request.body;
+var body=$response.body;
 $notify("","",JSON.stringify(body));
 $done();
