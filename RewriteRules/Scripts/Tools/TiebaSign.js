@@ -1,3 +1,3 @@
-var body=$response.body;
-$notify("","",JSON.stringify(JSON.parse(body)));
+var body=$response.body['anti']['tbs'];
+$notify("","",body);
 $done();
