@@ -4,7 +4,7 @@ function getCookies() {
         var CookieName = "百度贴吧";
         var CookieKey = "CookieTB";
         var CookieValue = $request.headers['Cookie'];
-        var BDUSS = CookieValue.split(';')[4].split('=')[1];
+        var BDUSS = CookieValue.match('BDUSS=(.*?);').split('=')[1];
         if ($prefs.valueForKey(CookieKey)) {
           if ($prefs.valueForKey(CookieKey) != CookieValue) {
             var cookie = $prefs.setValueForKey(CookieValue, CookieKey);
@@ -39,10 +39,10 @@ function getTbs() {
   try {
       if ($response.body && tbs != body ) {
           $prefs.setValueForKey(body, 'tbs');
-          console.log('更新tbs成功！');
+          $notify("","","更新tbs成功！");
       }
     } catch(e) {
-        console.log(e);
+        $notify("","",e);
     }
     $done()
 }
