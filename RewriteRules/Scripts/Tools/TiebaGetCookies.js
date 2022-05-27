@@ -31,7 +31,7 @@ function getCookies() {
       $notify("写入Cookie失败", "", "未知错误 ‼️")
       console.log(JSON.stringify(eor) + "\n" + eor + "\n" + JSON.stringify($request.headers))
     }
-    $.done();
+    $done();
   }
 function getTbs() {
   var tbs = $prefs.valueForKey('tbs');
