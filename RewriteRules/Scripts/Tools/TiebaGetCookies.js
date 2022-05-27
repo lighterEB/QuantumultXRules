@@ -12,9 +12,9 @@ function getCookies() {
             $prefs.setValueForKey(BDUSS, 'BDUSS');
             $prefs.setValueForKey(tbs, 'tbs');
             if (!cookie) {
-              $notify("", "", "更新" + CookieName + "Cookie失败 ‼️");
+              $notify("百度贴吧", "", "更新" + CookieName + "Cookie失败 ‼️");
             } else {
-              $notify("", "", "更新" + CookieName + "Cookie成功 🎉");
+              $notify("百度贴吧", "", "更新" + CookieName + "Cookie成功 🎉");
             }
           }
         } else {
@@ -22,9 +22,9 @@ function getCookies() {
           $prefs.setValueForKey(BDUSS, 'BDUSS');
           $prefs.setValueForKey(tbs, 'tbs');
           if (!cookie) {
-            $notify("", "", "首次写入" + CookieName + "Cookie失败 ‼️");
+            $notify("百度贴吧", "", "首次写入" + CookieName + "Cookie失败 ‼️");
           } else {
-            $notify("", "", "首次写入" + CookieName + "Cookie成功 🎉");
+            $notify("百度贴吧", "", "首次写入" + CookieName + "Cookie成功 🎉");
           }
         }
       } else {
