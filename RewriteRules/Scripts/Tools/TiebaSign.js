@@ -125,7 +125,7 @@ function signBars(bars, tbs, index, BDUSS) {
                             process.result.push({
                                 bar: bar.forum_name,
                                 errorCode: 0,
-                                errorMsg: `经验🆙＋${signResult.data.user_info.sign_bonus_point},签到排名🥇：${signResult.data.user_info.user_sign_rank}`
+                                errorMsg: `经验🆙＋${signResult.user_info.sign_bonus_point},签到排名🥇：${signResult.user_info.user_sign_rank}`
                             });
                         } else {
                             process.result.push({
@@ -138,7 +138,7 @@ function signBars(bars, tbs, index, BDUSS) {
                         $tosix7.notify("贴吧签到", "贴吧签到数据处理异常", JSON.stringify(e));
                         $tosix7.done()
                     }
-                    signBars(bars, tbs, ++index)
+                    signBars(bars, tbs, ++index, BDUSS)
                 }
             })
         }
