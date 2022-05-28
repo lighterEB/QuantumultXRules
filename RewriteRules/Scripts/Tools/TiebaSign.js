@@ -20,7 +20,7 @@ var process = {
     ]
 };
 
-const BDUSS = $tosix7.read('BDUSS');
+const BDUSS = $tosix7.read('BDUSS').split(";")[0];
 const tbs = $tosix7.read('tbs');
 var like_forums = {
     url: "http://tieba.baidu.com/mo/q/newmoindex",
