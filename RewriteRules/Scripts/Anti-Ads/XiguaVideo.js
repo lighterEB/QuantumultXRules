@@ -1,7 +1,8 @@
 var body = $response.body;
 var obj = JSON.parse(body);
-console.log(obj['data']);
-// for (var i=0; i<obj['data'].length; i++){
+for (var i=0; i<obj['data'].length; i++){
+    var content = JSON.parse(obj['data'][i]);
+    console.log(JSON.stringify(content));
 //     for (var key in obj['data'][i]['content']){
 //         console.log(key);
 //         if (key == 'insert_ads'){
@@ -9,5 +10,5 @@ console.log(obj['data']);
 //               obj['data'][i]['content'][key]['has_roll_ads'] = 'false';
 //         }
 //     }
-// }
+}
 $done(JSON.stringify(obj));
