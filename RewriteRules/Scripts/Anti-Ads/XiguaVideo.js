@@ -4,4 +4,4 @@ if(obj['data']['settings']['video_ad_config'] = '';){
     console.log("成功！");
 }
 
-$done(obj);
+$done(JSON.stringify(obj));
