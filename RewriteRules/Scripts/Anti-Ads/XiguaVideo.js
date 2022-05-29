@@ -1,7 +1,7 @@
 var body = $response.body;
 var obj = JSON.parse(body);
-for(var key in obj['data']['settings'){
-    console.log(key);
+if(obj['data']['settings']['video_ad_config'] = '';){
+    console.log("成功！");
 }
 
-$done();
+$done(obj);
