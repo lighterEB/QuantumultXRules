@@ -1,5 +1,5 @@
 var body = $response.body;
 var obj = JSON.parse(body);
-$notify("","",JSON.stringify(obj));
+$notify("","",obj.data.video_feed_ab_test_universal);
 
 $done();
