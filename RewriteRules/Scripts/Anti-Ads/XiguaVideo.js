@@ -2,9 +2,7 @@ var body = $response.body;
 var obj = JSON.parse(body);
 for (var i=0; i<obj['data'].length; i++){
     var content = JSON.parse(JSON.stringify(obj['data'][i]['content']));
-    for (var key in content){
-        console.log(key);
-    }
+    console.log(typeof(content));
 //     for (var key in obj['data'][i]['content']){
 //         console.log(key);
 //         if (key == 'insert_ads'){
