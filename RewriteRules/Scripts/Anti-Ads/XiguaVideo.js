@@ -2,7 +2,7 @@ var body = $response.body;
 var obj = JSON.parse(body);
 for (var i=0; i<obj['data'].length; i++){
     var content = JSON.parse(JSON.stringify(obj['data'][i]['content']));
-    console.log(content);
+    console.log(typeof(JSON.parse(JSON.parse(content))));
     $done();
 //     for (var key in obj['data'][i]['content']){
 //         console.log(key);
