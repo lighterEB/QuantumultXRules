@@ -1,5 +1,9 @@
 var body = $response.body;
 var obj = JSON.parse(body);
-console.log(JSON.stringify(obj.data.video_ad_config));
+for(var key in obj){
+	if(key.toString().match('_ad_')){
+		console.log(key);
+	}
+}
 
 $done();
