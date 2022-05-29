@@ -10,7 +10,7 @@ for (var i=0; i<obj['data'].length; i++){
         obj['data'][i]['content']=content;
         break
     }
-    if('ad_label' in content || 'bury_count'){
+    if('ad_label' in content || 'bury_count' in content){
         obj['data'][i]['content']='';
         console.log('干掉广告视频！');
         break
