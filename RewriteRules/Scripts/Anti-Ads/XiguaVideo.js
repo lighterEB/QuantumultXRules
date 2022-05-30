@@ -8,12 +8,10 @@ for (var i=0; i<obj['data'].length; i++){
         content['insert_ads']['has_roll_ads'] = false;
         console.log('干掉视频中广告！');
         obj['data'][i]['content']=content;
-        break
     }
     if('ad_label' in content || 'bury_count' in content || 'ad_id' in content){
         obj['data'][i]['content']='';
         console.log('干掉广告视频！');
-        break
     }else{
         console.log(content['filter_words']);
     }
