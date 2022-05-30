@@ -4,7 +4,7 @@ var data = [];
 for (var i=0; i<obj['data'].length; ++i){
     content = JSON.parse(obj['data'][i]['content']);
     if('ad_label' in content){
-        data.append({'content':'','code':''})
+        data.push({'content':'','code':''})
         console.log('干掉广告视频！');
     }else{
         insert_ads = JSON.parse(content['insert_ads']);
@@ -13,7 +13,7 @@ for (var i=0; i<obj['data'].length; ++i){
         insert_ads['has_insert_ads'] = false;
         insert_ads['has_roll_ads'] = false;
         console.log('干掉视频中广告！');
-        data.append(content)
+        data.push(content)
     }
 }
 obj['data'] = data;
