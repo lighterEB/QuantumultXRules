@@ -1,6 +1,6 @@
 var body = $response.body;
 var obj = JSON.parse(body);
-for (var i=0; i<obj['data'].length; i++){
+for (var i=0; i<obj['data'].length; ++i){
     content = JSON.parse(obj['data'][i]['content']);
     if(('insert_ads' in content) && !('ad_label' in content)){
         delete content['insert_ads']['roll_time_list'];
