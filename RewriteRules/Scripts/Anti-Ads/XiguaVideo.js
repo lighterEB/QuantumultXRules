@@ -13,7 +13,7 @@ for (var i=0; i<obj['data'].length; i++){
         obj['data'][i]['content']='';
         console.log('干掉广告视频！');
     }else{
-        console.log(content['filter_words']);
+        console.log(JSON.stingify(content['filter_words']));
     }
 //     for (var key in obj['data'][i]['content']){
 //         console.log(key);
