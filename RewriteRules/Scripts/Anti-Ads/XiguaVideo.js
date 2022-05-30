@@ -1,17 +1,20 @@
 var body = $response.body;
 var obj = JSON.parse(body);
+var data = [];
 for (var i=0; i<obj['data'].length; ++i){
     content = JSON.parse(obj['data'][i]['content']);
-    if(('insert_ads' in content) && !('ad_label' in content)){
-        delete content['insert_ads']['roll_time_list'];
-        content['insert_ads']['has_insert_ads'] = false;
-        content['insert_ads']['has_roll_ads'] = false;
-        console.log('干掉视频中广告！');
-        obj['data'][i]['content']=content;
-    }else{
-        obj['data'][i]['content']='';
+    if('ad_label' in content){
+        data.append({'content':'','code':''})
         console.log('干掉广告视频！');
-        console.log(JSON.stringify(content));
+    }else{
+        insert_ads = JSON.parse(content['insert_ads']);
+        delete insert_ads['roll_time_list'];
+        delete insert_ads['insert_time_list'];
+        insert_ads['has_insert_ads'] = false;
+        insert_ads['has_roll_ads'] = false;
+        console.log('干掉视频中广告！');
+        data.append(content)
     }
 }
+obj['data'] = data;
 $done(JSON.stringify(obj));
