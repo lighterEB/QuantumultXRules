@@ -8,12 +8,10 @@ for (var i=0; i<obj['data'].length; i++){
         content['insert_ads']['has_roll_ads'] = false;
         console.log('干掉视频中广告！');
         obj['data'][i]['content']=content;
-        break
     }else{
         obj['data'][i]['content']='';
         console.log('干掉广告视频！');
         console.log(JSON.stringify(content));
-        break
     }
 }
 $done(JSON.stringify(obj));
