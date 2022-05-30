@@ -10,15 +10,8 @@ for (var i=0; i<obj['data'].length; i++){
         obj['data'][i]['content']=content;
     }else{
         obj['data'][i]['content']='';
-        console.log('干掉广告视频！);
+        console.log('干掉广告视频！');
         console.log(JSON.stringify(content));
     }
-//     for (var key in obj['data'][i]['content']){
-//         console.log(key);
-//         if (key == 'insert_ads'){
-//               obj['data'][i]['content'][key]['has_insert_ads'] = 'false';
-//               obj['data'][i]['content'][key]['has_roll_ads'] = 'false';
-//         }
-//     }
 }
 $done(JSON.stringify(obj));
