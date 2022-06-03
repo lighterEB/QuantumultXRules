@@ -1,2 +1,2 @@
-# QuantumultXRules
-Some QX Rules for myself
+# Quantumult X Rules
+This rules just for personal 
