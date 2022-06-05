@@ -1,0 +1,12 @@
+{
+    "result" : 1,
+    "data" : {
+      "awardAmount" : 100
+    },
+    "traceId" : "EL2AgICg9p2LChiyAiCotsDtkjAow7uT-Qo=",
+    "ts" : 1654328925100,
+    "message" : "成功",
+    "host" : "ad-rs-cpwg421.idcyz.hb1.kwaidc.com",
+    "error_msg" : "成功"
+  }
+  
