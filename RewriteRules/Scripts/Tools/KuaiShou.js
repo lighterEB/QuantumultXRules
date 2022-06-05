@@ -2402,7 +2402,7 @@ class _0x9d8dda {
         await _0x39a23b(c[Vp(0x3ac)], S);
         let a = _0x1a0963;
         if (!a) return;
-        console.log(a);
+        console.log(JSON.stringify(a));
         //a['result'] == 0x1 ? console[c[Vp(0x99a)]](c[Vp(0x56d)](c['gUYzE'](c['lDdxm'](c[Vp(0x56d)](c[Vp(0x431)] + this[c[Vp(0x635)]], Vp(0xc05)), T[c[Vp(0xc40)]]), c['ppPFQ']), a[c[Vp(0x78b)]][c[Vp(0x268)]][c['yfTAz']])) : console[Vp(0x75b)](c[Vp(0x70d)](c['lDdxm'](c['WAZTE'] + this[c[Vp(0x635)]] + c[Vp(0x741)], T[c[Vp(0xc40)]]), c[Vp(0x3f8)]) + a[c[Vp(0x786)]]);
     }
     async [IM(0x781)](T) {
