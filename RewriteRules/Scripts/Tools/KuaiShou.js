@@ -154,7 +154,6 @@ let ml = '',
 if ($[_0x58c636(0x2f1)]()) {
     gtr = require('fs');
     if (isFileExist('C:/')) console['log']('电脑环境');
-    
     else {
         console[_0x481e4a(0x1ba, 'vIZR')]('青龙环境');
 
@@ -222,10 +221,10 @@ function addF(_0x74ef64, _0x4ac2c1) {
         _0x2121d5 = _0x58c636;
     if (typeof $request !== _0x2121d5(0x249)) await ksurl();
     else {
-        initVM(), arrs = abc(global['vm'], acckey, mac, 0x1a, 0x0);
-        if (arrs == '') return;
-        arrs = JSON[_0x438ea4(0x2f9, 'np7J')](arrs);
-        if (!arrs) return;
+        // initVM(), arrs = abc(global['vm'], acckey, mac, 0x1a, 0x0);
+        // if (arrs == '') return;
+        // arrs = JSON[_0x438ea4(0x2f9, 'np7J')](arrs);
+        // if (!arrs) return;
         ksurlArr = ksurl['split']('@'), console[_0x2121d5(0x245)](_0x438ea4(0x2a2, 'LT(5') + arrs['gg'] + '\x0a'), console[_0x2121d5(0x245)](_0x438ea4(0x1dc, '8(j9') + arrs['bb'] + '\x0a'), console[_0x2121d5(0x245)]('-------------\x20共' + ksurlArr[_0x2121d5(0x359)] + _0x438ea4(0x1c9, '[#o8')), console[_0x438ea4(0x240, 'a3a7')](_0x2121d5(0x335) + arrs[_0x2121d5(0x2bd)] + _0x438ea4(0x22c, 'hKsd'));
         if (ksurlArr[_0x438ea4(0x2cb, 'wci]')] > parseInt(arrs[_0x2121d5(0x2bd)])) console[_0x2121d5(0x245)]('\x0a当前账号大于可运行的账号数量，请删除多余账号~~~');
         else
@@ -250,7 +249,7 @@ function addF(_0x74ef64, _0x4ac2c1) {
                 await msgsbksp(), await $['wait'](0xbb8), await msgsbfx(), await $['wait'](0xbb8), await msgsbrwlb();
             }
     }
-    destroyVM(global['vm']);
+    // destroyVM(global['vm']);
 })()[_0x481e4a(0x207, '4q96')](_0x190b37 => $[_0x481e4a(0x272, 'dm^h')](_0x190b37))[_0x58c636(0x23e)](() => $[_0x58c636(0x307)]());
 
 function msgsbcx(_0x30d389 = 0x0) {
@@ -1154,7 +1153,7 @@ function Env(t, e) {
     }
     return new class {
         constructor(t, e) {
-            this.name = t, this.http = new s(this), this.data = null, this.dataFile = "box.dat", this.logs = [], this.isMute = !1, this.isNeedRewrite = !1, this.logSeparator = "\n", this.encoding = "utf-8", this.startTime = (new Date).getTime(), Object.assign(this, e), this.log("", `??${this.name}, 开始!`)
+            this.name = t, this.http = new s(this), this.data = null, this.dataFile = "box.dat", this.logs = [], this.isMute = !1, this.isNeedRewrite = !1, this.logSeparator = "\n", this.encoding = "utf-8", this.startTime = (new Date).getTime(), Object.assign(this, e), this.log("", `${this.name}, 开始!`)
         }
         isNode() {
             return "undefined" != typeof module && !!module.exports
@@ -1470,7 +1469,7 @@ function Env(t, e) {
         }
         logErr(t, e) {
             const s = !this.isSurge() && !this.isQuanX() && !this.isLoon();
-            s ? this.log("", `??${this.name}, 错误!`, t.stack) : this.log("", `??${this.name}, 错误!`, t)
+            s ? this.log("", `${this.name}, 错误!`, t.stack) : this.log("", `${this.name}, 错误!`, t)
         }
         fwur() {
             var bbas = new FxPCnMKLw7()
@@ -1482,7 +1481,7 @@ function Env(t, e) {
         done(t = {}) {
             const e = (new Date).getTime(),
                 s = (e - this.startTime) / 1e3;
-            this.log("", `??${this.name}, 结束! ?? ${s} 秒`), this.log(), (this.isSurge() || this.isQuanX() || this.isLoon()) && $done(t)
+            this.log("", `${this.name}, 结束!  ${s} 秒`), this.log(), (this.isSurge() || this.isQuanX() || this.isLoon()) && $done(t)
         }
     }(t, e)
 }
